@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon png -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- og tags -->
+    <meta property="og:title" content="Color Scheme Generator" />
+    <meta property="og:description" content="Color Scheme Generator" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/color-scheme-generator/main/screenshot.png"
+    />
+    <meta
+      property="og:url"
+      content="https://franexmo81.github.io/color-scheme-generator/"
+    />
+    <meta property="og:site_name" content="Color Scheme Generator" />
+
+    <!-- title of site -->
+
+    <title>Color Scheme Generator</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Attribution footer stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://franexmo81.github.io/attribution-footer/attribution-style.css"
+    />
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="title">Color Scheme Generator</h1>
+      <form class="color-form">
+        <h2 class="color-chosen">
+          <label class="color-chosen-value" for="color-picker">#FFFFFF</label>
+          <input id="color-picker" class="color-picker" type="color" />
+        </h2>
+        <select class="mode-selector" name="mode-selector">
+          <option value="none">SELECT A MODE HERE</option>
+          <option value="monochrome">MONOCHROME</option>
+          <option value="monochrome-dark">MONOCHROME DARK</option>
+          <option value="monochrome-light">MONOCHROME LIGHT</option>
+          <option value="analogic">ANALOGIC</option>
+          <option value="complement">COMPLEMENT</option>
+          <option value="analogic-complement">ANALOGIC-COMPLEMENT</option>
+          <option value="triad">TRIAD</option>
+          <option value="quad">QUAD</option>
+        </select>
+      </form>
+      <section class="colors-container colors-container--empty">
+        <div id="color--0" class="color">
+          <span class="color-value"></span>
+          <button class="tooltip">Click to copy</button>
+        </div>
+        <div id="color--1" class="color">
+          <span class="color-value"></span>
+          <button class="tooltip">Click to copy</button>
+        </div>
+        <div id="color--2" class="color">
+          <span class="color-value"></span>
+          <button class="tooltip">Click to copy</button>
+        </div>
+        <div id="color--3" class="color">
+          <span class="color-value"></span>
+          <button class="tooltip">Click to copy</button>
+        </div>
+        <div id="color--4" class="color">
+          <span class="color-value"></span>
+          <button class="tooltip">Click to copy</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      <div class="movingFooter">
+        <span
+          >Developed by<a href="https://www.franextremera.com/" target="_blank"
+            >Fran Extremera</a
+          >.</span
+        >
+        <span
+          >Background by<a
+            href="https://unsplash.com/@pawel_czerwinski?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            >Pawel Czerwinski</a
+          >
+          on<a
+            href="https://unsplash.com/photos/assorted-color-smoke-3k9PGKWt7ik"
+            target="_blank"
+            >Unsplash</a
+          >.</span
+        >
+        <span
+          >Color Palette icon by<a
+            href="https://icons8.com/icon/VegwCkMCIl4d/color-palette"
+            target="_blank"
+            >Icons8</a
+          >.</span
+        >
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

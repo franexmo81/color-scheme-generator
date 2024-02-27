@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+  /* outline: 1px dashed rgba(255, 0, 0, 0.3) !important; */
+  /*background: rgb(0, 100, 0, 0.05) !important;*/
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 30px;
+  min-height: 100svh;
+  background-image: linear-gradient(
+      0deg,
+      rgba(10, 10, 10, 0.5),
+      rgba(100, 100, 100, 0.5)
+    ),
+    url("images/pawel-czerwinski-3k9PGKWt7ik-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+  margin: auto 30px;
+  color: #333333;
+  text-transform: uppercase;
+  font-size: 2rem;
+  transition: color 1s;
+}
+
+.main-container {
+  text-align: center;
+  max-width: 750px;
+  margin: 50px auto;
+  background-color: #dddddd;
+  padding: 20px 0 50px;
+  transition: background-color 1s;
+}
+
+.color-form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px 20px;
+  gap: 20px;
+}
+
+.color-picker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-100%);
+  visibility: hidden;
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.color-chosen {
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: #dddddd;
+  transition: background-color 1s, color 1s, filter 0.2s;
+}
+
+.color-chosen-value {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+}
+
+.mode-selector {
+  appearance: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  background-color: #dddddd;
+  transition: background-color 1s, color 1s, filter 0.2s;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.color-chosen:hover,
+.mode-selector:hover {
+  outline-width: 2px;
+  outline-style: solid;
+}
+
+.colors-container {
+  display: flex;
+  transition: min-height 1s;
+}
+
+@media screen and (max-width: 700px) {
+  .colors-container {
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 25rem;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .colors-container {
+    flex-direction: row;
+    justify-content: center;
+    min-height: 350px;
+  }
+}
+
+.colors-container--empty {
+  min-height: 0;
+}
+
+.color {
+  position: relative;
+  flex-basis: 20%;
+  min-height: 5rem;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  transition: background-color 1s, min-height 1s;
+}
+
+.colors-container--empty .color {
+  min-height: 0;
+}
+
+.color-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #eeeeeecc;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s 0.25s, background-color 0.5s;
+}
+
+.color--clickable .color-value {
+  cursor: pointer;
+}
+
+.color--clickable .color-value:hover {
+  background-color: #eeeeee;
+}
+
+.colors-container--empty .color-value {
+  opacity: 0;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: #eeeeeecc;
+  opacity: 0;
+  padding: 0.2rem;
+  box-sizing: content-box;
+  border: none;
+  transition: opacity 0.5s, background-color 0.5s, transform 0.5s;
+}
+
+.color--clickable .tooltip {
+  display: inline-block;
+}
+
+.tooltip::after {
+  content: " ";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.colors-container--empty .tooltip {
+  display: none;
+}
+
+.color:hover .tooltip {
+  opacity: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tooltip {
+    transform: translate(3rem, 50%);
+  }
+
+  .color:hover .tooltip {
+    transform: translate(3.5rem, 50%);
+  }
+
+  .tooltip::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-color: transparent #eeeeeecc transparent transparent;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .tooltip {
+    transform: translate(-50%, -1rem);
+  }
+
+  .color:hover .tooltip {
+    transform: translate(-50%, -1.5rem);
+  }
+
+  .tooltip::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: #eeeeeecc transparent transparent transparent;
+  }
+}
+
+.tooltip img {
+  height: 100%;
+}
